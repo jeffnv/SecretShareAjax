@@ -2,16 +2,13 @@ class FriendshipsController < ApplicationController
   before_filter :require_current_user!
 
   def create
-    @friendship = Friendship.new({ :in_friend_id => params[:user_id] })
-    @friendship.out_friend_id = current_user.id
-    @friendship.save!
+    current_user.out_friendships.create!(in_friend_id: params[:user_id])
 
     head :ok
   end
 
   def destroy
-    @friendship = Friendship.where("out_friend_id = ? AND in_friend_id = ?", current_user.id, params[:user_id]).first
-    @friendship.destroy
+    current_user.out_friendships.where(in_friend_id: params[:user_id])[0].destroy
 
     head :ok
   end

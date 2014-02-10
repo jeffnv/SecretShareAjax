@@ -7,7 +7,7 @@
   <% end %>
 </ul>
 
-<%= render "secrets/form", :secret => @secret %>
+<%= render "secrets/form", :secret => @user.received_secrets.new %>
 
 <script>
   $("form.secrets-form").on("submit", function (event) {

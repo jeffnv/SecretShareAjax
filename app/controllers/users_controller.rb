@@ -28,6 +28,5 @@ class UsersController < ApplicationController
     end
 
     @user = User.find(params[:id])
-    @secret = Secret.new(:recipient_id => @user.id)
   end
 end

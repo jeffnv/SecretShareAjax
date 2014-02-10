@@ -7,16 +7,12 @@ class Friendship < ActiveRecord::Base
   def self.can_friend?(u1_id, u2_id)
     return false if u1_id == u2_id
 
-    !Friendship.exists?(
-      ["out_friend_id = ? AND in_friend_id = ?", u1_id, u2_id]
-    )
+    !Friendship.exists?(out_friend_id: u1_id, in_friend_id: u2_id)
   end
 
   def self.can_unfriend?(u1_id, u2_id)
     return false if u1_id == u2_id
 
-    Friendship.exists?(
-      ["out_friend_id = ? AND in_friend_id = ?", u1_id, u2_id]
-    )
+    Friendship.exists?(out_friend_id: u1_id, in_friend_id: u2_id)
   end
 end
