@@ -2,12 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-span.friend-buttons.can-unfriend button.friend {
+.can-friend form.unfriend, form.friend {
   display: none;
 }
 
-span.friend-buttons.can-friend button.unfriend {
-  display: none;
+.can-friend form.friend, form.unfriend {
+  display: block;
 }
 
 .disabled-message, .is-disabled input[type="submit"] {
