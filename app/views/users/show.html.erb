@@ -20,7 +20,7 @@
       url: "/secrets",
       type: "POST",
       data: data,
-      success: function () {
+      success: function (data) {
         $("ul.secrets-list").append($("<li>").text(data.secret.title));
         $currentTarget.find("input#secret_title").val("");
       }
