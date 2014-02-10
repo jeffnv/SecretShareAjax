@@ -8,7 +8,7 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    current_user.out_friendships.where(in_friend_id: params[:user_id])[0].destroy
+    current_user.out_friendships.where(in_friend_id: params[:user_id]).first!.destroy
 
     head :ok
   end
