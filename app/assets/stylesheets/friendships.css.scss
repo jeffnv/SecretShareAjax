@@ -9,3 +9,11 @@ span.friend-buttons.can-unfriend button.friend {
 span.friend-buttons.can-friend button.unfriend {
   display: none;
 }
+
+.disabled-message, .is-disabled input[type="submit"] {
+  display: none;
+}
+
+.is-disabled .disabled-message  {
+  display: inline;
+}
